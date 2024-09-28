@@ -29,26 +29,26 @@ int main()
   ofstream plain_txt(output_file_path);
   while(getline(encrypted_txt, my_txt))
   {
-    // Cesar Cipher Encryption Algorithm
+    // Cesar Cipher Decryption Algorithm
     for(char& c : my_txt)
     {
       if(int(c) >= 97 && int(c) <= 122)
       {
-        // Encrypt lower case characters
+        // Decrypt lower case characters
         int val= c - 'a';
         val= (val - key + 26) % 26;
         c = 'a' + val;
       }
       else if(int(c) >= 65 && int(c) <= 90)
       {
-        // Encrypt upper case characters
+        // Decrypt upper case characters
         int val= c - 'A';
         val= (val - key + 26) % 26;
         c = 'A' + val;
       }
       else if(int(c) >= 48 && int(c) <= 57)
       {
-        // Encrypt digits
+        // Decrypt digits
         int val= c - '0';
         val= (val - key + 10) % 10;
         c = '0' + val;
